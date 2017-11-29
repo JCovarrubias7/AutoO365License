@@ -1,4 +1,28 @@
-﻿$pshost = Get-Host              # Get the PowerShell Host.
+﻿#############################################################################
+# Author  : Jorge E. Covarrubias
+# Website : 
+# LinkedIn  : https://www.linkedin.com/in/jorge-e-covarrubias-973217141/
+#
+# Original script : https://gallery.technet.microsoft.com/office/DirSync-Timer-for-O365-c432dfc7
+#
+# Version   : 1.0
+# Created   : 9/14/2017
+# Modified  :
+# 11/29/2017  - Adding heading to script
+#             - To recap, added Staff and Student Functions to script.
+#             - Added the count variables to keep count on how many times it has ran.
+#             - Adjusted $toGetCST time from 5 to 6 due to daylights saving time.
+#             - General clean up of code.
+# 
+#
+# Purpose : This script will run continuously to check if new accounts are in Office365 and assign them licenses
+#           according to the Title associated with the account.
+#           The script is set to check every 10 minutes. This can be changed by changing the Start-Sleep to how
+#           ever many seconds you would like.
+#
+#############################################################################
+
+$pshost = Get-Host              # Get the PowerShell Host.
 $pswindow = $pshost.UI.RawUI    # Get the PowerShell Host's UI.
 
 $newsize = $pswindow.windowsize
@@ -82,7 +106,7 @@ While($true)
     $time = Get-Date
 
     Write-Host "Script Last Checked DirSync at: " $time  -ForegroundColor Red
-	Write-Host "Times Executed : Staff = $staffLicensedCount Students = $studentLicenseCount" `r`n
+	  Write-Host "Times Executed : Staff = $staffLicensedCount Students = $studentLicenseCount" `r`n
     
     Start-Sleep -Seconds 2
 
@@ -102,9 +126,6 @@ While($true)
 	StaffLocationandLicenses
 	StudentLocationandLicenses
 	
-	
     Start-Sleep -Seconds 600
     
-    
-      
 } 
