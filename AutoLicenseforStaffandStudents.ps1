@@ -5,7 +5,7 @@
 #
 # Original script : https://gallery.technet.microsoft.com/office/DirSync-Timer-for-O365-c432dfc7
 #
-# Version   : 1.0
+# Version   : 1.1
 # Created   : 9/14/2017
 # Modified  :
 # 11/29/2017  - Adding heading to script
@@ -13,6 +13,7 @@
 #             - Added the count variables to keep count on how many times it has ran.
 #             - Adjusted $toGetCST time from 5 to 6 due to daylights saving time.
 #             - General clean up of code.
+# 01/09/2017  - Removing ClassDash preview license (Lines 74 and 95) due to no longer being utilized. 
 # 
 #
 # Purpose : This script will run continuously to check if new accounts are in Office365 and assign them licenses
