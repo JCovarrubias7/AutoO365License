@@ -71,7 +71,7 @@ Function StaffLocationandLicenses(){
 		# Set Licenses
 		$staffUnlicensedUsers = Get-MsolUser -All -Title "Staff" -UnlicensedUsersOnly; 
 		If ($staffUnlicensedUsers) {
-			$staffUnlicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -AddLicenses "sd104:STANDARDWOFFPACK_IW_FACULTY","sd104:CLASSDASH_PREVIEW"}
+			$staffUnlicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -AddLicenses "sd104:STANDARDWOFFPACK_IW_FACULTY"}
 			$Script:staffLicensedCount++
 		} Else {
 		
@@ -92,7 +92,7 @@ Function StudentLocationandLicenses(){
 		# Set Licenses
 		$studentUnlicensedUsers = Get-MsolUser -All -Title "Student" -UnlicensedUsersOnly;
 		If ($studentUnlicensedUsers) {
-			$studentUnlicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -AddLicenses "sd104:STANDARDWOFFPACK_IW_STUDENT","sd104:CLASSDASH_PREVIEW"}
+			$studentUnlicensedUsers | foreach {Set-MsolUserLicense -UserPrincipalName $_.UserPrincipalName -AddLicenses "sd104:STANDARDWOFFPACK_IW_STUDENT"}
 			$Script:studentLicenseCount++
 		} Else {
 		
